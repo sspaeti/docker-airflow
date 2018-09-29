@@ -2,6 +2,10 @@ version: '2.1'
 services:
     postgres:
         image: postgres:9.6
+        ports:
+            - 5432:5432
+        #network_mode: bridge
+        # container_name: postgresdb
         environment:
             - POSTGRES_USER=airflow
             - POSTGRES_PASSWORD=airflow
