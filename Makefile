@@ -11,6 +11,7 @@ run: build
 kill:
 	@echo "Killing docker-airflow containers"
 	docker kill $(shell docker ps -q --filter name=docker-airflow_webserver_1)
+	docker kill $(shell docker ps -q --filter name=docker-airflow_postgres_1)
 
 tty:
 	docker exec -i -t $(shell docker ps -q --filter name=docker-airflow_webserver_1) /bin/bash
